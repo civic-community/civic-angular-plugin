@@ -1,18 +1,24 @@
 # How to contribute
-Hi, it's great to have you interested in contributing with the Civic Community Development Program.
-We're all ver excited to participate in the Secure Identity Plaform....
+Welcome all Civic Community Developers!
  
 Here are some important resources:
- * [CDP Forrum]
+ * [Docs](https://docs.civic.com/)
  * [Slack channel]
- * [Telegram] 
+ * [A useful example in PHP](https://github.com/blockvis/civic-sip-php)
+ * [Integration Portal](https://integrate.civic.com/login) (Where to get your developer account.)
 
 ## Testing
+ToDo: Project owners include steps to run your tests for future contributors!
 
-Please follow this steps to test your code before submitting
+Please run the above tests and ensure they pass before submitting a pull request. All additions to the project should include tests as well!
 
 ## Submitting changes
-Please send a [GitHub Pull Request to ](https://github.com/) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). When you send a pull request please include your Ethereum Address.
+Please send a [GitHub Pull Request to](https://github.com/) with a clear list of what you've done (read more about [pull requests](http://help.github.com/pull-requests/)). 
+
+**Bounty Participants**: When you send a pull request please include your Ethereum Address. See the [bounty page](https://cdp.civic.com/forums/1-community-developer-program/topics/12-ruby-sip-library-bounty-3000-cvcs/) to check the status of this project. You are only eligible to receive a portion of the bounty while the bounty is in the "Active" state.
+
+Familiarize yourself with the process for our [Community Developer Program](https://www.civic.com/community-developer-program) and make sure you've agreed to the [Terms and Conditions](https://s3-us-west-2.amazonaws.com/civic.com/cdp_terms.pdf) hosted there before continuing!
 
 Thanks,
+The Civic Community
 

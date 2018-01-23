@@ -3,7 +3,7 @@
 
 Civic [Secure Identity Platform (SIP)](https://www.civic.com/products/secure-identity-platform) API client implemented in Ruby.
 
-**Welcome Bounty Hunters!** Part of your job will be filling out the below. We've includes a place holder notes to help with the structure. See[REQUIREMENTS.md](REQUIREMENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
+**Welcome Bounty Hunters!** Part of your job will be filling out the below. We've includes a place holder notes to help with the structure. See [requirements](REQUIREMENTS.md) and [contributing](CONTRIBUTING.md) to get started.
 
 ## Geting Started
 

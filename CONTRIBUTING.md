@@ -3,8 +3,7 @@ Welcome all Civic Community Developers!
  
 Here are some important resources:
  * [Docs](https://docs.civic.com/)
- * [Slack channel]
- * [A useful example in PHP](https://github.com/blockvis/civic-sip-php)
+ * [Slack channel](https://civic-community-dev.slack.com) Invites are by request only at the moment.
  * [Integration Portal](https://integrate.civic.com/login) (Where to get your developer account.)
 
 ## Testing

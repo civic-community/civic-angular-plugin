@@ -6,7 +6,7 @@
 
 Civic [Secure Identity Platform (SIP)](https://www.civic.com/products/secure-identity-platform) Angular component for sign in and QR
 
-**Welcome Bounty Hunters!** Part of your job will be filling out the below. We've includes a place holder notes to help with the structure. See [requirements](REQUIREMENTS.md) and [contributing](CONTRIBUTING.md) to get started.
+**Welcome Bounty Hunters!** Part of your job will be filling out the below. We've included some place holder notes to help with the structure. See [requirements](REQUIREMENTS.md) and [contributing](CONTRIBUTING.md) to get started.
 
 ## Geting Started
 

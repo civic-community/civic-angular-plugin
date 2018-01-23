@@ -46,7 +46,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Author 1**
-See also the list of [contributors](https://github.com/civic-community/civic-sip-api-ruby/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/civic-community/civic-angular-plugin/contributors) who participated in this project.
 
 ## License
 

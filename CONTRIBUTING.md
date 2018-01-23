@@ -20,5 +20,6 @@ Please send a [GitHub Pull Request to](https://github.com/) with a clear list of
 Familiarize yourself with the process for our [Community Developer Program](https://www.civic.com/community-developer-program) and make sure you've agreed to the [Terms and Conditions](https://s3-us-west-2.amazonaws.com/civic.com/cdp_terms.pdf) hosted there before continuing!
 
 Thanks,
+
 The Civic Community
 

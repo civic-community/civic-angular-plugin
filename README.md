@@ -1,4 +1,7 @@
 # WORK IN PROGRESS
+
+**Contributors**: Before submitting a pull request, be sure to read and agree to our [Terms and Conditions](https://s3-us-west-2.amazonaws.com/civic.com/cdp_terms.pdf). 
+
 # Civic SIP Plugin - Ruby
 
 Civic [Secure Identity Platform (SIP)](https://www.civic.com/products/secure-identity-platform) API client implemented in Ruby.

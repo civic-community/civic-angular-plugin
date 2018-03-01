@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  appId:'BkHwSc1IG',
+  buttonName:'Log in with Civic'
+
+
 };

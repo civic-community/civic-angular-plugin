@@ -11,18 +11,32 @@ export class CivicComponent implements OnInit {
 
   civicSip:any;
   jwtToken:any;
-  flag:string;
+  flag:number;
   Id:string=environment.appId;
   buttonText:string=environment.buttonName;
+  error:any;
+  /*
+  flag index:
+  1 auth-code-recieved
+  2 user-cancelled
+  3 read
+  4 error
+  after sending sign-up request using "sendSignUpRequest()" analyse returned number
+  retrieve jwtToken by using  getJwtToken() method
+  get the error by using getError() method
+  
+  */
 
 
-  constructor() { }
+  constructor() {
+    this.flag=-1;
+   }
 
   ngOnInit() {
     this.civicSip=new civic.sip({appId:this.Id});
 
   }
-  sendSignUpRequest(){
+  sendSignUpRequest():number{
    
     this.civicSip.signup({ style: 'popup', scopeRequest: this.civicSip.ScopeRequests.BASIC_SIGNUP });
     this.civicSip.on('auth-code-received', function (event) {
@@ -30,27 +44,45 @@ export class CivicComponent implements OnInit {
   
       // encoded JWT Token is sent to the server
      this.jwtToken = event.response;
-     console.log(this.jwtToken);
-      this.flag="success";
+     this.flag=1;
      
       
     });
   
     this.civicSip.on('user-cancelled', function (event) {
      console.log("user cancelled");
-     this.flag="user cancelled";
+     this.flag=2;
      });
   
     this.civicSip.on('read', function (event) {
-      this.flag="read";
+      this.flag=3;
     });
   
-    this.civicSip.on('civic-sip-error', function (error) {
-        // handle error display if necessary.
-        console.log('   Error type = ' + error.type);
-        console.log('   Error message = ' + error.message);
-        this.flag="error\t"+error.type+"\t"+error.message;
+    this.civicSip.on('civic-sip-error', function (err) {
+        this.error=err;
+        this.flag=4;
       });
+      return this.flag;
   }
+  getJwtToken():any{
+    if(this.flag==1){
+    return this.jwtToken;
+    }
+    else{
+      console.log("Error jwtToken not yet recieved");
+      return null;
+
+    }
+  }
+
+  getError():any{
+    if(this.flag==4){
+      return this.error;
+
+    }
+    console.log("No errors while sending signup request..check flag number to find out more");
+    return null;
+  }
+
 
 }

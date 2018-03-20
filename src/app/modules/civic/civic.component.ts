@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
 declare var civic:any;
 
@@ -13,7 +13,7 @@ export class CivicComponent implements OnInit {
   jwtToken:any;
   flag:number;
   Id:string=environment.appId;
-  buttonText:string=environment.buttonName;
+  buttonText:string;//=environment.buttonName;
   error:any;
   /*
   flag index:
@@ -28,8 +28,10 @@ export class CivicComponent implements OnInit {
   */
 
 
-  constructor() {
+  constructor(x:ElementRef) {
     this.flag=-1;
+   this.Id= x.nativeElement.getAttribute('appId');
+   this.buttonText=x.nativeElement.getAttribute('buttonLabel');
    }
 
   ngOnInit() {

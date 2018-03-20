@@ -12,7 +12,7 @@ export class CivicComponent implements OnInit {
   civicSip:any;
   jwtToken:any;
   flag:number;
-  Id:string=environment.appId;
+  Id:string;
   buttonText:string;//=environment.buttonName;
   error:any;
   /*
@@ -21,7 +21,7 @@ export class CivicComponent implements OnInit {
   2 user-cancelled
   3 read
   4 error
-  after sending sign-up request using "sendSignUpRequest()" analyse returned number
+  after sending sign-up request using "sendSignUpRequest()" analyse flag
   retrieve jwtToken by using  getJwtToken() method
   get the error by using getError() method
   

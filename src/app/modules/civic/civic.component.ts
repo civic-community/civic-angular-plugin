@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
 import { CivicSignupService } from './civic-signup.service';
 declare var civic:any;
+declare var global:any;
 
 @Component({
   selector: 'app-civic',
@@ -65,6 +66,7 @@ export class CivicComponent implements OnInit {
       // encoded JWT Token is sent to the server
      this.jwtToken = event.response;
      console.log(this.jwtToken);
+     global=this.jwtToken;
      this.flag=1;
      this.data.updateFlag(this.flag);
      console.log('updated flag in civic component')
@@ -96,6 +98,8 @@ export class CivicComponent implements OnInit {
       return this.flag;
   }
   getJwtToken():any{
+    this.jwtToken=global;
+    this.flag=1;
     if(this.flag==1){
     return this.jwtToken;
     }

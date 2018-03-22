@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
 
   }
    updateMessagetoToken(){
-    this.message=this.civicServ.getSignupObject().jwtToken;
+    this.message=this.civicServ.getJwtToken();
 
   }
   updateMessagetoError(){

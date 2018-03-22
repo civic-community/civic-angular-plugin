@@ -29,7 +29,7 @@ export class CivicComponent implements OnInit {
   Use the attribute default in your app-civic reference tag if you want to use default civic style button,Ensure that you have the css file in your main html file
   otherwise you can style it using the id that is 'signupButton'
   
-  */
+  */    
  currentClasses: {};
  setCurrentClasses() {
    // CSS classes: added/removed per current state of component properties
@@ -56,15 +56,18 @@ export class CivicComponent implements OnInit {
 
   }
   sendSignUpRequest():number{
-   
+    this.data.updateFlag(this.flag);
+     console.log('updated flag in civic component')
     this.civicSip.signup({ style: 'popup', scopeRequest: this.civicSip.ScopeRequests.BASIC_SIGNUP });
     this.civicSip.on('auth-code-received', function (event) {
      
   
       // encoded JWT Token is sent to the server
      this.jwtToken = event.response;
+     console.log(this.jwtToken);
      this.flag=1;
      this.data.updateFlag(this.flag);
+     console.log('updated flag in civic component')
      
       
     });
@@ -88,6 +91,8 @@ export class CivicComponent implements OnInit {
         this.data.updateFlag(this.flag);
 
       });
+      this.data.init(this);
+
       return this.flag;
   }
   getJwtToken():any{

@@ -1,17 +1,28 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,ModuleWithProviders} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CivicComponent } from './civic.component';
 import {CivicSignupService} from './civic-signup.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    
+    
   ],
   providers: [CivicSignupService],
   declarations: [CivicComponent],
   exports:[
-    CivicComponent,
-    CivicSignupService
+    CivicComponent
+    ],
+  bootstrap:[
+    CivicComponent
   ]
 })
-export class CivicModule { }
+export class CivicModule { 
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CivicModule,
+      providers: [ CivicSignupService ]
+    };
+  }
+}

@@ -16,6 +16,7 @@ export class CivicSignupService {
   }
 //this flag is observable and the changes in flag should be visible in real time to dependent component
   updateFlag(n:number){
+    console.log('updating flag ' +n);
     this.flagSource.next(n);
   }
 

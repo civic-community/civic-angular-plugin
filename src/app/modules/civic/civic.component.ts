@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
 import { CivicSignupService } from './civic-signup.service';
 declare var civic:any;
-declare var global:any;
+declare var window:any;
 
 @Component({
   selector: 'app-civic',
@@ -46,7 +46,7 @@ export class CivicComponent implements OnInit {
     this.data.updateFlag(this.flag);
 
    this.Id= x.nativeElement.getAttribute('appId');
-   this.buttonText=x.nativeElement.getAttribute('buttonLabel');
+   this.buttonText=x.nativeElement.getAttribute('buttonLabel'); 
    this.defaultStyle=x.nativeElement.hasAttribute('default');
    }
 
@@ -57,49 +57,39 @@ export class CivicComponent implements OnInit {
 
   }
   sendSignUpRequest():number{
-    this.data.updateFlag(this.flag);
-     console.log('updated flag in civic component')
+    
     this.civicSip.signup({ style: 'popup', scopeRequest: this.civicSip.ScopeRequests.BASIC_SIGNUP });
     this.civicSip.on('auth-code-received', function (event) {
      
-  
       // encoded JWT Token is sent to the server
      this.jwtToken = event.response;
+     window.buffer_flag=1;
+     window.buffer_jwt=this.jwtToken;
      console.log(this.jwtToken);
-     global=this.jwtToken;
-     this.flag=1;
-     this.data.updateFlag(this.flag);
-     console.log('updated flag in civic component')
-     
-      
     });
   
     this.civicSip.on('user-cancelled', function (event) {
      console.log("user cancelled");
-     this.flag=2;
-     this.data.updateFlag(this.flag);
+     window.buffer_flag=2;
 
      });
   
     this.civicSip.on('read', function (event) {
-      this.flag=3;
-      this.data.updateFlag(this.flag);
+     window.buffer_flag=3;
 
     });
   
     this.civicSip.on('civic-sip-error', function (err) {
-        this.error=err;
-        this.flag=4;
-        this.data.updateFlag(this.flag);
+       window.buffer_flag=4;
+       window.buffer_error=err;
 
       });
-      this.data.init(this);
 
-      return this.flag;
+      return 0;
   }
   getJwtToken():any{
-    this.jwtToken=global;
-    this.flag=1;
+    this.jwtToken=window.buffer_jwt;
+    this.flag=window.buffer_flag;
     if(this.flag==1){
     return this.jwtToken;
     }

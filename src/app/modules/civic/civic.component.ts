@@ -57,6 +57,9 @@ export class CivicComponent implements OnInit {
     window.buffer_service=this.data;
 
   }
+  updateFlag(){
+    this.flag=window.buffer_flag;
+  }
   sendSignUpRequest():number{
     
     this.civicSip.signup({ style: 'popup', scopeRequest: this.civicSip.ScopeRequests.BASIC_SIGNUP });

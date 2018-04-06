@@ -19,16 +19,20 @@ export class CivicSignupService {
   }
 
   getJwtToken():string{
+    this.civicObject.updateFlag();
     return this.civicObject.getJwtToken();
   }
   getSignupObject():CivicComponent{
+    this.civicObject.updateFlag();
     return this.civicObject;
   }
 
   getError():any{
+    this.civicObject.updateFlag();
     return this.civicObject.getError();
   }
   getFlag():any{
+    this.civicObject.updateFlag();
     return this.civicObject.flag;
   }
 }

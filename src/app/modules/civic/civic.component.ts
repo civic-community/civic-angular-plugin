@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
+import { CivicSignupService } from './civic-signup.service';
 declare var civic:any;
+declare var window:any;
 
 @Component({
   selector: 'app-civic',
@@ -28,7 +30,7 @@ export class CivicComponent implements OnInit {
   Use the attribute default in your app-civic reference tag if you want to use default civic style button,Ensure that you have the css file in your main html file
   otherwise you can style it using the id that is 'signupButton'
   
-  */
+  */    
  currentClasses: {};
  setCurrentClasses() {
    // CSS classes: added/removed per current state of component properties
@@ -39,47 +41,57 @@ export class CivicComponent implements OnInit {
    };
  }
 
-  constructor(x:ElementRef) {
+  constructor(x:ElementRef,private data:CivicSignupService) {
     this.flag=-1;
+    this.data.updateFlag(this.flag);
+
    this.Id= x.nativeElement.getAttribute('appId');
-   this.buttonText=x.nativeElement.getAttribute('buttonLabel');
+   this.buttonText=x.nativeElement.getAttribute('buttonLabel'); 
    this.defaultStyle=x.nativeElement.hasAttribute('default');
    }
 
   ngOnInit() {
     this.civicSip=new civic.sip({appId:this.Id});
     this.setCurrentClasses();
+    this.data.init(this);
+    window.buffer_service=this.data;
 
   }
   sendSignUpRequest():number{
-   
+    
     this.civicSip.signup({ style: 'popup', scopeRequest: this.civicSip.ScopeRequests.BASIC_SIGNUP });
     this.civicSip.on('auth-code-received', function (event) {
      
-  
       // encoded JWT Token is sent to the server
      this.jwtToken = event.response;
-     this.flag=1;
-     
-      
+     window.buffer_flag=1;
+     window.buffer_jwt=this.jwtToken;
+     window.buffer_service.sameAsFlag=991;
+     console.log(this.jwtToken);
     });
   
     this.civicSip.on('user-cancelled', function (event) {
      console.log("user cancelled");
-     this.flag=2;
+     window.buffer_flag=2;
+
      });
   
     this.civicSip.on('read', function (event) {
-      this.flag=3;
+     window.buffer_flag=3;
+
     });
   
     this.civicSip.on('civic-sip-error', function (err) {
-        this.error=err;
-        this.flag=4;
+       window.buffer_flag=4;
+       window.buffer_error=err;
+
       });
-      return this.flag;
+      
+      return 0;
   }
   getJwtToken():any{
+    this.jwtToken=window.buffer_jwt;
+    this.flag=window.buffer_flag;
     if(this.flag==1){
     return this.jwtToken;
     }

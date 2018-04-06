@@ -7,7 +7,7 @@ export class CivicSignupService {
   private civicObject:CivicComponent;
   private flagSource=new BehaviorSubject<number>(0);
   currentFlag=this.flagSource.asObservable();
-
+  sameAsFlag:number;
 
   constructor() { }
 

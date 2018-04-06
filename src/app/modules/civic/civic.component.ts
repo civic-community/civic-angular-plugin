@@ -54,6 +54,7 @@ export class CivicComponent implements OnInit {
     this.civicSip=new civic.sip({appId:this.Id});
     this.setCurrentClasses();
     this.data.init(this);
+    window.buffer_service=this.data;
 
   }
   sendSignUpRequest():number{
@@ -65,6 +66,7 @@ export class CivicComponent implements OnInit {
      this.jwtToken = event.response;
      window.buffer_flag=1;
      window.buffer_jwt=this.jwtToken;
+     window.buffer_service.sameAsFlag=991;
      console.log(this.jwtToken);
     });
   
@@ -84,7 +86,7 @@ export class CivicComponent implements OnInit {
        window.buffer_error=err;
 
       });
-
+      
       return 0;
   }
   getJwtToken():any{

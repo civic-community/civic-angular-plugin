@@ -29,8 +29,8 @@ export class AppComponent implements OnInit{
 
   }
   updateMessagetoError(){
-    this.message=this.civicServ.getSignupObject().getError();
-
+    //this.message=this.civicServ.getSignupObject().getError();
+    this.message='this is a variable from service that was updated inside bounded promise function '+this.civicServ.sameAsFlag;
   }
   updateMessagetoId(){
     this.message=this.civicServ.getSignupObject().Id;

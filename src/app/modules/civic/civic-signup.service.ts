@@ -5,10 +5,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class CivicSignupService {
   private civicObject:CivicComponent;
-  private flagSource=new BehaviorSubject<number>(0);
+  private flagSource=new BehaviorSubject<number>(-1);
   currentFlag=this.flagSource.asObservable();
-  sameAsFlag:number;
-
   constructor() { }
 
   init(x:CivicComponent){
@@ -27,4 +25,10 @@ export class CivicSignupService {
     return this.civicObject;
   }
 
+  getError():any{
+    return this.civicObject.getError();
+  }
+  getFlag():any{
+    return this.civicObject.flag;
+  }
 }

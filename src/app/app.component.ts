@@ -9,12 +9,12 @@ import { CivicSignupService } from './modules/civic/civic-signup.service';
 })
 export class AppComponent implements OnInit{
   title = 'app';
-  message:string;
+  message:any;
   constructor(private civicServ:CivicSignupService){
 
   }
   ngOnInit(){
-    this.civicServ.currentFlag.subscribe(message =>this.message=message.toString());
+    this.civicServ.currentFlag.subscribe(flag =>this.message=flag);
     console.log('app component oninit');
   }
   updateMessage(){
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit{
   }
   updateMessagetoError(){
     //this.message=this.civicServ.getSignupObject().getError();
-    this.message='this is a variable from service that was updated inside bounded promise function '+this.civicServ.sameAsFlag;
+    this.message=this.civicServ.getError();
   }
   updateMessagetoId(){
     this.message=this.civicServ.getSignupObject().Id;

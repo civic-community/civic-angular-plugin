@@ -66,24 +66,29 @@ export class CivicComponent implements OnInit {
      this.jwtToken = event.response;
      window.buffer_flag=1;
      window.buffer_jwt=this.jwtToken;
-     window.buffer_service.sameAsFlag=991;
+     window.buffer_service.updateFlag(1);
      console.log(this.jwtToken);
     });
   
     this.civicSip.on('user-cancelled', function (event) {
      console.log("user cancelled");
      window.buffer_flag=2;
+     window.buffer_service.updateFlag(2);
 
      });
   
     this.civicSip.on('read', function (event) {
      window.buffer_flag=3;
+     window.buffer_service.updateFlag(3);
+
 
     });
   
     this.civicSip.on('civic-sip-error', function (err) {
        window.buffer_flag=4;
        window.buffer_error=err;
+       window.buffer_service.updateFlag(4);
+
 
       });
       

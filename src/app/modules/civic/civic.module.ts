@@ -2,6 +2,8 @@ import { NgModule ,ModuleWithProviders} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CivicComponent } from './civic.component';
 import {CivicSignupService} from './civic-signup.service';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 
 @NgModule({
   imports: [

@@ -219,5 +219,5 @@ CivicModule.ctorParameters = () => [];
  * Generated bundle index. Do not edit.
  */
 
-export { CivicModule, CivicSignupService as ɵa, CivicComponent as ɵb };
+export { CivicModule, CivicSignupService, CivicComponent as ɵa };
 //# sourceMappingURL=civic-signup.js.map

@@ -209,8 +209,8 @@ CivicModule.decorators = [
 CivicModule.ctorParameters = function () { return []; };
 
 exports.CivicModule = CivicModule;
-exports.ɵa = CivicSignupService;
-exports.ɵb = CivicComponent;
+exports.CivicSignupService = CivicSignupService;
+exports.ɵa = CivicComponent;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

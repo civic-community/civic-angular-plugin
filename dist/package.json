@@ -1,6 +1,6 @@
 {
   "name": "civic-signup",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,6 @@
   },
   "private": false,
   "dependencies": {
-    "tslib": "^1.7.1"
   },
   "devDependencies": {
     "@angular/cli": "1.6.6",

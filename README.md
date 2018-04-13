@@ -24,7 +24,7 @@ import {CivicSignupService} from 'civic-signup';
 ```
 
 - ### adding the button
-    the decorator is <app-civic></app-civic>
+    the decorator is `app-civic'
 
 #### Example
 ```sh

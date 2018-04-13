@@ -1,25 +1,42 @@
-# Node
-node_modules
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+
+/dist-server
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+/.vscode
+.vscode/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
+testem.log
+/typings
 
-# Yarn
-yarn-error.log
+# e2e
+/e2e
+/e2e/*.js
+/e2e/*.map
 
-# JetBrains
-.idea/
-
-# VS Code
-.vscode/
-
-# Windows
-Thumbs.db
-Desktop.ini
-
-# Mac
+# System Files
 .DS_Store
-
-# Temporary files
-coverage/
-
-docs
-tmp
+Thumbs.db
+.ng_pkg_build

@@ -1,5 +1,5 @@
 # Civic Angular Component
-## Bounty: $1,500
+## Bounty: TBD
 
 ### Overview
 A reusable component that displays a Sign In button, triggers the Civic QR-code when clicked, and handles the response events. Needs to be configurable so each Angular app that uses the component can have unique credentials.
